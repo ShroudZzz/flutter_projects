@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/animation/animated_builder.dart';
+import 'package:my_app/animation/animated_widget.dart';
+import 'package:my_app/animation/animation_hero.dart';
 import 'package:my_app/base/flutter_layout_page.dart';
 import 'package:my_app/base/flutter_widget_liftcycle.dart';
 import 'package:my_app/base/gesture_page.dart';
@@ -8,6 +11,7 @@ import 'package:my_app/base/plugin_use.dart';
 import 'package:my_app/base/resource_page.dart';
 import 'package:my_app/base/statefull_group_page.dart';
 
+import 'animation/animation_hero_2.dart';
 import 'base/photo_app.dart';
 
 void main() {
@@ -56,6 +60,10 @@ class _DynamaticThemeState extends State<DynamaticTheme> {
         'launch': (BuildContext context) => LaunchPage(),
         'lifecycle': (BuildContext context) => WidgetLiftcycle(),
         'photo': (BuildContext context) => PhotoApp(),
+        'animation_logo': (BuildContext context) => LogoApp(),
+        'animated_builder_logo': (BuildContext context) => LogoAnimatedBuilderWidget(),
+        'hero_animation': (BuildContext context) => HeroAnimation(),
+        'hero_animation2': (BuildContext context) => RadialExpansionDemo(),
       },
     );
   }
@@ -95,6 +103,10 @@ class _RouteNavigatorState extends State<RouteNavigator> {
           _item('Launch', LaunchPage(), 'launch'),
           _item('Lifecycle', WidgetLiftcycle(), 'lifecycle'),
           _item('PhotoApp', PhotoApp(), 'photo'),
+          _item('Animation Logo', LogoApp(), 'animation_logo'),
+          _item('Animated Builder Logo', LogoAnimatedBuilderWidget(), 'animated_builder_logo'),
+          _item('Hero Animation', HeroAnimation(), 'hero_animation'),
+          _item('Hero Animation 2', RadialExpansionDemo(), 'hero_animation2'),
         ],
       ),
     );
