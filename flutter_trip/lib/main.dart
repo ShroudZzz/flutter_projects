@@ -1,8 +1,8 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_trip/navigator/tab_navigator.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,7 +10,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,7 +31,9 @@ class MyApp extends StatefulWidget {
   @override
   State<MyApp> createState() => _MyAppState();
 }
+*/
 
+/*
 class _MyAppState extends State<MyApp> {
   String showResult = '';
 
@@ -127,6 +128,51 @@ class CommonModel {
   factory CommonModel.fromJson(Map<String, dynamic> json) {
     return CommonModel(json['icon'], json['title'], json['url'],
         json['statusBarColor'], json['hideAppBar']);
+  }
+}
+*/
+
+/*
+// shared_preferences use
+class _MyAppState extends State<MyApp> {
+  String countString = '';
+  String localCount = '';
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'SharedPreferences Use',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('SharedPreferences'),
+        ),
+        body: Column(
+          children: [
+            ElevatedButton(onPressed: () => _incrementCounter(), child: Text('Counter')),
+            Text(countString, style: TextStyle(fontSize: 20)),
+            ElevatedButton(onPressed: () => _getCounter(), child: Text('Get Counter')),
+            Text(localCount, style: TextStyle(fontSize: 20)),
+          ],
+        ),
+      ),
+
+    );
+  }
+
+  _incrementCounter() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      countString = '${countString} 1';
+    });
+    int counter = (prefs.getInt('counter') ?? 0) + 1;
+    await prefs.setInt('counter', counter);
+  }
+
+  _getCounter() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      localCount = prefs.getInt('counter').toString();
+    });
   }
 }
  */
