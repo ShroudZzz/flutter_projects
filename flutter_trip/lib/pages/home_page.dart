@@ -3,7 +3,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 import 'package:flutter_trip/dao/home_dao.dart';
+import 'package:flutter_trip/model/common_model.dart';
 import 'package:flutter_trip/model/home_model.dart';
+import 'package:flutter_trip/widget/grid_nav.dart';
+import 'package:flutter_trip/widget/local_nav.dart';
 
 const APPBAR_SCROLL_MAX_OFFSET = 100;
 
@@ -23,7 +26,7 @@ class _HomePageState extends State<HomePage> {
 
   double appBarAlpha = 0;
 
-  String jsonString = "";
+  List<CommonModel> localNavList = [];
 
   @override
   void initState() {
@@ -34,6 +37,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xfff2f2f2),
       body: Stack(
         children: [
           MediaQuery.removePadding(
@@ -60,9 +64,13 @@ class _HomePageState extends State<HomePage> {
                       pagination: const SwiperPagination(),
                     ),
                   ),
+                  Padding(
+                      padding: const EdgeInsets.fromLTRB(7, 4, 7, 4),
+                    child: LocalNav(localNavList: localNavList),
+                  ),
                   Container(
                     height: 800,
-                    child: ListTile(title: Text(jsonString)),
+                    child: ListTile(title: Text('')),
                   )
                 ],
               ),
@@ -102,10 +110,10 @@ class _HomePageState extends State<HomePage> {
   void _loadData() {
     HomeDao.fetch().then((value) {
       setState(() {
-        jsonString = json.encode(value);
+        localNavList = value.localNavList;
       });
     }).catchError((e) {
-      jsonString = e.toString();
+      print(e);
     });
     // try {
     //   HomeModel model = await HomeDao.fetch();
