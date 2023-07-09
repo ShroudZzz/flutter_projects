@@ -1,5 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
+import 'package:flutter_trip/dao/home_dao.dart';
+import 'package:flutter_trip/model/home_model.dart';
 
 const APPBAR_SCROLL_MAX_OFFSET = 100;
 
@@ -18,6 +22,14 @@ class _HomePageState extends State<HomePage> {
   ];
 
   double appBarAlpha = 0;
+
+  String jsonString = "";
+
+  @override
+  void initState() {
+    super.initState();
+    _loadData();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +62,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Container(
                     height: 800,
-                    child: ListTile(title: Text('Zzz')),
+                    child: ListTile(title: Text(jsonString)),
                   )
                 ],
               ),
@@ -85,5 +97,23 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       appBarAlpha = alpha;
     });
+  }
+
+  void _loadData() {
+    HomeDao.fetch().then((value) {
+      setState(() {
+        jsonString = json.encode(value);
+      });
+    }).catchError((e) {
+      jsonString = e.toString();
+    });
+    // try {
+    //   HomeModel model = await HomeDao.fetch();
+    //   setState(() {
+    //     jsonString = json.encode(model);
+    //   });
+    // } catch(e) {
+    //   jsonString = e.toString()
+    // }
   }
 }
