@@ -36,7 +36,7 @@ class LocalNav extends StatelessWidget {
   Widget _item(BuildContext context, CommonModel model) {
     return GestureDetector(
       onTap: () {
-
+        //Navigator.push(context, MaterialPageRoute(builder: (context) => WebView()));
       },
       child: Column(
         children: [
