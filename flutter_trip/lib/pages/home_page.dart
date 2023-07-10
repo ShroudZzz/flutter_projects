@@ -91,18 +91,15 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.fromLTRB(7, 4, 7, 4),
           child: LocalNav(localNavList: localNavList),
         ),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(7, 0, 7, 4),
-          child: _GetGridNavView(),
-        ),
+
+        if (gridNavModel != null) Padding(padding: const EdgeInsets.fromLTRB(7, 0, 7, 4), child: GridNav.GridView(gridNavModel: gridNavModel!)),
+
         Padding(
           padding: const EdgeInsets.fromLTRB(7, 0, 7, 4),
           child: SubNav(subNavList: subNavList),
         ),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(7, 0, 7, 4),
-          child: _GetSalesBoxView(),
-        ),
+
+        if (salesBox != null) Padding(padding: const EdgeInsets.fromLTRB(7, 0, 7, 4), child: SalesBox(salesBox: salesBox!)),
       ],
     );
   }
@@ -154,31 +151,6 @@ class _HomePageState extends State<HomePage> {
         _loading = false;
       });
     });
-
     return null;
-    // try {
-    //   HomeModel model = await HomeDao.fetch();
-    //   setState(() {
-    //     jsonString = json.encode(model);
-    //   });
-    // } catch(e) {
-    //   jsonString = e.toString()
-    // }
-  }
-
-  Widget _GetGridNavView() {
-    if (gridNavModel != null) {
-      return GridNav.GridView(gridNavModel: gridNavModel!);
-    } else {
-      return const SizedBox.shrink();
-    }
-  }
-
-  Widget _GetSalesBoxView() {
-    if (salesBox != null) {
-      return SalesBox(salesBox: salesBox!);
-    } else {
-      return const SizedBox.shrink();
-    }
   }
 }
