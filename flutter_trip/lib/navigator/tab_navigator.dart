@@ -20,7 +20,7 @@ class _TabNavigatorState extends State<TabNavigator> {
   final _defaultColor = Colors.grey;
   final _activeColor = Colors.blue;
 
-  int _currentIndex = 1;
+  int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
