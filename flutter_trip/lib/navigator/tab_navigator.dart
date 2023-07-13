@@ -27,7 +27,7 @@ class _TabNavigatorState extends State<TabNavigator> {
     return Scaffold(
       body: PageView(
         controller: _controller,
-        children: const [HomePage(), SearchPage(), TravelPage(), MyPage()],
+        children: const [HomePage(), SearchPage(hideLeft: true), TravelPage(), MyPage()],
       ),
       bottomNavigationBar: CupertinoTabBar(
           currentIndex: _currentIndex,
