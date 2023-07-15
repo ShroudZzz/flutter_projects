@@ -8,6 +8,7 @@ import 'package:flutter_trip/model/grid_nav_model.dart';
 import 'package:flutter_trip/model/home_model.dart';
 import 'package:flutter_trip/model/sales_box_model.dart';
 import 'package:flutter_trip/pages/search_page.dart';
+import 'package:flutter_trip/pages/speak_page.dart';
 import 'package:flutter_trip/widget/grid_nav.dart' as GridNav;
 import 'package:flutter_trip/widget/local_nav.dart';
 import 'package:flutter_trip/widget/sales_box.dart';
@@ -180,7 +181,11 @@ class _HomePageState extends State<HomePage> {
     return null;
   }
 
-  void _jumpToSpeak() {}
+  void _jumpToSpeak() {
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return SpeakPage();
+    }));
+  }
 
   void _jumpToSearch() {
     Navigator.push(context, MaterialPageRoute(builder: (context) {
