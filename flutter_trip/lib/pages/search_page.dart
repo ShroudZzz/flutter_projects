@@ -42,7 +42,7 @@ class _SearchPageState extends State<SearchPage> {
   @override
   void initState() {
     if (widget.keyword != null) {
-      _onTextChange(widget.keyword!)
+      _onTextChange(widget.keyword!);
     }
     super.initState();
   }

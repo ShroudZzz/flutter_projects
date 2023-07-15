@@ -28,6 +28,7 @@ class _TabNavigatorState extends State<TabNavigator> {
       body: PageView(
         controller: _controller,
         children: const [HomePage(), SearchPage(hideLeft: true), TravelPage(), MyPage()],
+        physics: const NeverScrollableScrollPhysics(), //禁止底部Tab滚动
       ),
       bottomNavigationBar: CupertinoTabBar(
           currentIndex: _currentIndex,
