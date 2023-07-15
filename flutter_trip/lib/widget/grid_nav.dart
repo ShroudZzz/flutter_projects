@@ -21,18 +21,11 @@ class GridView extends StatelessWidget {
 
   _gridNavItems(BuildContext context) {
     List<Widget> items = [];
-    if (gridNavModel == null) return items;
-    if (gridNavModel.hotel != null) {
-      items.add(_gridNavItem(context, gridNavModel.hotel, true));
-    }
+    items.add(_gridNavItem(context, gridNavModel.hotel, true));
 
-    if (gridNavModel.flight != null) {
-      items.add(_gridNavItem(context, gridNavModel.flight, false));
-    }
+    items.add(_gridNavItem(context, gridNavModel.flight, false));
 
-    if (gridNavModel.travel != null) {
-      items.add(_gridNavItem(context, gridNavModel.travel, false));
-    }
+    items.add(_gridNavItem(context, gridNavModel.travel, false));
 
     return items;
   }

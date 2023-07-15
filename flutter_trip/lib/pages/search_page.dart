@@ -184,9 +184,6 @@ class _SearchPageState extends State<SearchPage> {
   }
 
   _title(SearchItem item) {
-    if (item == null) {
-      return null;
-    }
     List<TextSpan> spans = [];
     spans.addAll(_keywordTextSpans(item.word, searchModel!.keyword!));
     spans.add(TextSpan(
@@ -214,7 +211,7 @@ class _SearchPageState extends State<SearchPage> {
             style: keywordStyle));
       }
       String val = arr[i];
-      if (val != null && val.length > 0) {
+      if (val.length > 0) {
         spans.add(TextSpan(text: val, style: normalStyle));
       }
     }

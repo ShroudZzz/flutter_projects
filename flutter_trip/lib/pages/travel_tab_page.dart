@@ -105,9 +105,7 @@ class _TravelTabPageState extends State<TravelTabPage>
     }
     List<TravelItem> filterItems = [];
     resultList.forEach((item) {
-      if (item.article != null) {
-        filterItems.add(item);
-      }
+      filterItems.add(item);
     });
     return filterItems;
   }
@@ -173,7 +171,7 @@ class _TravelItem extends StatelessWidget {
           ),
           child: FadeInImage.memoryNetwork(
             placeholder: kTransparentImage,
-            image: item.article!.images![0].dynamicUrl!,
+            image: item.article.images![0].dynamicUrl!,
             fit: BoxFit.cover,
           ),
         ),

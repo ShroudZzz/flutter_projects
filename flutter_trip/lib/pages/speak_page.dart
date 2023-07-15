@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_trip/pages/search_page.dart';
+//import 'package:flutter_trip/pages/search_page.dart';
 import 'package:flutter_trip/plugin/asr_manager.dart';
 
 ///语音识别
@@ -59,9 +59,9 @@ class _SpeakPageState extends State<SpeakPage>
       speakTips = '- 识别中 -';
     });
     AsrManager.start().then((text) {
-      if (text?.isNotEmpty ?? false) {
+      if (text.isNotEmpty) {
         setState(() {
-          speakResult = text!;
+          speakResult = text;
         });
         Navigator.pop(context);
 

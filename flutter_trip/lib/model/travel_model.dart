@@ -109,7 +109,7 @@ class Article {
     if (json['images'] != null) {
       images = List<Images>.empty(growable: true);
       json['images'].forEach((v) {
-        images!.add(Images.fromJson(v)!);
+        images!.add(Images.fromJson(v));
       });
     }
     hasVideo = json['hasVideo'];
@@ -119,13 +119,13 @@ class Article {
     if (json['urls'] != null) {
       urls = List<Urls>.empty(growable: true);
       json['urls'].forEach((v) {
-        urls!.add(Urls.fromJson(v)!);
+        urls!.add(Urls.fromJson(v));
       });
     }
     if (json['topics'] != null) {
       topics = List<Topics>.empty(growable: true);
       json['topics'].forEach((v) {
-        topics!.add(Topics.fromJson(v)!);
+        topics!.add(Topics.fromJson(v));
       });
     }
     if (json['pois'] != null) {
@@ -166,10 +166,10 @@ class Article {
     data['likeCount'] = likeCount;
     data['commentCount'] = commentCount;
     if (urls != null) {
-      data['urls'] = urls!.map((v) => v?.toJson()).toList();
+      data['urls'] = urls!.map((v) => v.toJson()).toList();
     }
     if (topics != null) {
-      data['topics'] = topics!.map((v) => v?.toJson()).toList();
+      data['topics'] = topics!.map((v) => v.toJson()).toList();
     }
     if (pois != null) {
       data['pois'] = pois!.map((v) => v?.toJson()).toList();

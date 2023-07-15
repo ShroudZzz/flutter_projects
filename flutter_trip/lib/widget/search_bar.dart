@@ -119,7 +119,7 @@ class _SearchBarState extends State<SearchBar> {
   _wrapTap(Widget child, void Function() callback) {
     return GestureDetector(
       onTap: () {
-        if (callback != null) callback();
+        callback();
       },
       child: child,
     );
