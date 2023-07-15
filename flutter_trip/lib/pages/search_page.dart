@@ -38,6 +38,14 @@ class SearchPage extends StatefulWidget {
 class _SearchPageState extends State<SearchPage> {
   SearchModel? searchModel;
   String? keyword;
+  
+  @override
+  void initState() {
+    if (widget.keyword != null) {
+      _onTextChange(widget.keyword!)
+    }
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
