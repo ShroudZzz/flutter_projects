@@ -37,16 +37,16 @@ class GridView extends StatelessWidget {
     items.add(_subItem(context, gridNavItem.item3, gridNavItem.item4));
 
     List<Widget> expandItems = [];
-    items.forEach((item) {
-      expandItems.add(Expanded(child: item, flex: 1));
-    });
+    for (var item in items) {
+      expandItems.add(Expanded(flex: 1, child: item));
+    }
     
-    Color startColor = Color(int.parse('0xff' + gridNavItem.startColor));
-    Color endColor = Color(int.parse('0xff' + gridNavItem.endColor));
+    Color startColor = Color(int.parse('0xff${gridNavItem.startColor}'));
+    Color endColor = Color(int.parse('0xff${gridNavItem.endColor}'));
 
     return Container(
       height: 88,
-      margin: first ? null : EdgeInsets.only(top: 3),
+      margin: first ? null : const EdgeInsets.only(top: 3),
       decoration: BoxDecoration(
         gradient: LinearGradient(colors: [startColor, endColor]),
       ),
@@ -72,7 +72,7 @@ class GridView extends StatelessWidget {
               alignment: AlignmentDirectional.bottomEnd,
             ),
             Container(
-              margin: EdgeInsets.only(top: 10),
+              margin: const EdgeInsets.only(top: 10),
               child: Text(model.title ?? '',
                   style: const TextStyle(fontSize: 14, color: Colors.white)),
             ),

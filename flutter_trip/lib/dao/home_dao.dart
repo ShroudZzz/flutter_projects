@@ -9,7 +9,7 @@ class HomeDao {
     var url = Uri.parse(HOME_URL);
     final response = await http.get(url);
     if (response.statusCode == 200) {
-      Utf8Decoder utf8decoder = Utf8Decoder();
+      Utf8Decoder utf8decoder = const Utf8Decoder();
       var result = json.decode(utf8decoder.convert(response.bodyBytes));
       return HomeModel.fromJson(result);
     } else {

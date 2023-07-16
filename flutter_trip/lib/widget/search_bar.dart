@@ -53,28 +53,26 @@ class _SearchBarState extends State<SearchBar> {
   }
 
   _genNormalSearch() {
-    return Container(
-      child: Row(
-        children: [
-          _wrapTap(
-              Container(
-                padding: EdgeInsets.fromLTRB(6, 5, 10, 5),
-                child: widget.hideLeft ?? false
-                    ? null
-                    : const Icon(Icons.arrow_back_ios,
-                        color: Colors.grey, size: 26),
-              ),
-              widget.leftButtonClick ?? () {}),
-          Expanded(flex: 1, child: _inputBox()),
-          _wrapTap(
-              Container(
-                padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
-                child: const Text('Search',
-                    style: TextStyle(color: Colors.blue, fontSize: 17)),
-              ),
-              widget.rightButtonClick ?? () {}),
-        ],
-      ),
+    return Row(
+      children: [
+        _wrapTap(
+            Container(
+              padding: const EdgeInsets.fromLTRB(6, 5, 10, 5),
+              child: widget.hideLeft ?? false
+                  ? null
+                  : const Icon(Icons.arrow_back_ios,
+                      color: Colors.grey, size: 26),
+            ),
+            widget.leftButtonClick ?? () {}),
+        Expanded(flex: 1, child: _inputBox()),
+        _wrapTap(
+            Container(
+              padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
+              child: const Text('Search',
+                  style: TextStyle(color: Colors.blue, fontSize: 17)),
+            ),
+            widget.rightButtonClick ?? () {}),
+      ],
     );
   }
 
@@ -83,7 +81,7 @@ class _SearchBarState extends State<SearchBar> {
       child: Row(children: <Widget>[
         _wrapTap(
             Container(
-                padding: EdgeInsets.fromLTRB(6, 5, 5, 5),
+                padding: const EdgeInsets.fromLTRB(6, 5, 5, 5),
                 child: Row(
                   children: <Widget>[
                     Text(
@@ -104,7 +102,7 @@ class _SearchBarState extends State<SearchBar> {
         ),
         _wrapTap(
             Container(
-              padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
+              padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
               child: Icon(
                 Icons.comment,
                 color: _homeFontColor(),
@@ -135,7 +133,7 @@ class _SearchBarState extends State<SearchBar> {
 
     return Container(
       height: 40,
-      padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+      padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
       decoration: BoxDecoration(
         color: inputBoxColor,
         borderRadius: BorderRadius.circular(

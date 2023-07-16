@@ -32,8 +32,8 @@ class SalesBox extends StatelessWidget {
       children: [
         Container(
           height: 44,
-          margin: EdgeInsets.only(left: 10),
-          decoration: BoxDecoration(
+          margin: const EdgeInsets.only(left: 10),
+          decoration: const BoxDecoration(
             border:
                 Border(bottom: BorderSide(width: 1, color: Color(0xfff2f2f2))),
           ),
@@ -42,18 +42,18 @@ class SalesBox extends StatelessWidget {
             children: [
               Image.network(salesBox.icon, height: 15, fit: BoxFit.fill),
               Container(
-                padding: EdgeInsets.fromLTRB(10, 1, 8, 1),
-                margin: EdgeInsets.only(right: 7),
+                padding: const EdgeInsets.fromLTRB(10, 1, 8, 1),
+                margin: const EdgeInsets.only(right: 7),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-                  gradient: LinearGradient(
+                  gradient: const LinearGradient(
                       colors: [Color(0xffff4e63), Color(0xffff6cc9)],
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight),
                 ),
                 child: GestureDetector(
                   onTap: () {},
-                  child: Text('Get More',
+                  child: const Text('Get More',
                       style: TextStyle(color: Colors.white, fontSize: 12)),
                 ),
               )
@@ -87,7 +87,7 @@ class SalesBox extends StatelessWidget {
   }
 
   Widget _item(BuildContext context, CommonModel model, bool big, bool left, bool last) {
-    BorderSide borderSide = BorderSide(width: 0.8, color: Colors.red);
+    BorderSide borderSide = const BorderSide(width: 0.8, color: Colors.red);
     return GestureDetector(
       onTap: () {
         //Navigator.push(context, MaterialPageRoute(builder: (context) => WebView()));

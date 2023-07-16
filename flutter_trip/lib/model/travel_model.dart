@@ -14,7 +14,7 @@ class TravelItemModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['totalCount'] = totalCount;
     data['resultList'] = resultList!.map((v) => v.toJson()).toList();
     return data;
@@ -33,7 +33,7 @@ class TravelItem {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['type'] = type;
     data['article'] = article.toJson();
     return data;
@@ -53,7 +53,7 @@ class Article {
   late int? likeCount;
   late int? commentCount;
   late List<Urls>? urls;
-  late List<Null>? tags;
+  late List<void>? tags;
   late List<Topics>? topics;
   List<Pois?>? pois;
   late String? publishTime;
@@ -149,7 +149,7 @@ class Article {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['articleId'] = articleId;
     data['articleType'] = articleType;
     data['productType'] = productType;
@@ -215,7 +215,7 @@ class Author {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['authorId'] = authorId;
     data['nickName'] = nickName;
     data['clientAuth'] = clientAuth;
@@ -241,7 +241,7 @@ class CoverImage {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['dynamicUrl'] = dynamicUrl;
     data['originalUrl'] = originalUrl;
     return data;
@@ -271,7 +271,7 @@ class Images {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['imageId'] = imageId;
     data['dynamicUrl'] = dynamicUrl;
     data['originalUrl'] = originalUrl;
@@ -299,7 +299,7 @@ class Urls {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['version'] = version;
     data['appUrl'] = appUrl;
     data['h5Url'] = h5Url;
@@ -322,7 +322,7 @@ class Topics {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['topicId'] = topicId;
     data['topicName'] = topicName;
     data['level'] = level;
@@ -360,7 +360,7 @@ class Pois {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['poiType'] = poiType;
     data['poiId'] = poiId;
     data['poiName'] = poiName;
@@ -389,7 +389,7 @@ class PoiExt {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['h5Url'] = h5Url;
     data['appUrl'] = appUrl;
     return data;

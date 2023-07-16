@@ -22,9 +22,9 @@ class SubNav extends StatelessWidget {
 
   _items(BuildContext context) {
     List<Widget> items = [];
-    subNavList.forEach((model) {
+    for (var model in subNavList) {
       items.add(_item(context, model));
-    });
+    }
 
     int seprate = (subNavList.length / 2 + 0.5).toInt();
     return Column(
@@ -33,7 +33,7 @@ class SubNav extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: items.sublist(0, seprate)),
         Padding(
-          padding: EdgeInsets.only(top: 10),
+          padding: const EdgeInsets.only(top: 10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: items.sublist(seprate, subNavList.length),
@@ -58,7 +58,7 @@ class SubNav extends StatelessWidget {
                 height: 18,
               ),
               Padding(
-                padding: EdgeInsets.only(top: 3),
+                padding: const EdgeInsets.only(top: 3),
                 child: Text(model.title ?? '',
                     style: const TextStyle(fontSize: 12)),
               ),

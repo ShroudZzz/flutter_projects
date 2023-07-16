@@ -17,7 +17,7 @@ class TravelTabModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['url'] = url;
     data['tabs'] = tabs.map((v) => v.toJson()).toList();
     return data;
@@ -36,7 +36,7 @@ class TravelTab {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['labelName'] = labelName;
     data['groupChannelCode'] = groupChannelCode;
     return data;

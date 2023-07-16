@@ -26,7 +26,6 @@ class _TravelPageState extends State<TravelPage> with TickerProviderStateMixin {
         travelTabModel = model;
       });
     }).catchError((e) {
-      print(e);
     });
     super.initState();
   }

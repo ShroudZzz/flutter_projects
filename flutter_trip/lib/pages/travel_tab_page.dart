@@ -95,7 +95,6 @@ class _TravelTabPageState extends State<TravelTabPage>
       });
     }).catchError((e) {
       _loading = false;
-      print(e);
     });
   }
 
@@ -104,18 +103,18 @@ class _TravelTabPageState extends State<TravelTabPage>
       return [];
     }
     List<TravelItem> filterItems = [];
-    resultList.forEach((item) {
+    for (var item in resultList) {
       filterItems.add(item);
-    });
+    }
     return filterItems;
   }
 
   @override
   bool get wantKeepAlive => true;
 
-  Future<Null> _handleRefresh() async {
+  Future<void> _handleRefresh() async {
     _loadData();
-    return null;
+    return;
   }
 }
 

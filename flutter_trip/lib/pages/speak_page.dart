@@ -20,7 +20,7 @@ class _SpeakPageState extends State<SpeakPage>
   @override
   void initState() {
     controller = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 1000));
+        vsync: this, duration: const Duration(milliseconds: 1000));
     animation = CurvedAnimation(parent: controller, curve: Curves.easeIn)
       ..addStatusListener((status) {
         if (status == AnimationStatus.completed) {
@@ -42,7 +42,7 @@ class _SpeakPageState extends State<SpeakPage>
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.all(30),
+        padding: const EdgeInsets.all(30),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -67,7 +67,6 @@ class _SpeakPageState extends State<SpeakPage>
 
       }
     }).catchError((e) {
-      print(e);
     });
   }
 
@@ -83,21 +82,21 @@ class _SpeakPageState extends State<SpeakPage>
   _topItem() {
     return Column(
       children: <Widget>[
-        Padding(
+        const Padding(
             padding: EdgeInsets.fromLTRB(0, 30, 0, 30),
             child: Text('你可以这样说',
                 style: TextStyle(fontSize: 16, color: Colors.black54))),
-        Text('故宫门票\n北京一日游\n迪士尼乐园',
+        const Text('故宫门票\n北京一日游\n迪士尼乐园',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 15,
               color: Colors.grey,
             )),
         Padding(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: Text(
             speakResult,
-            style: TextStyle(color: Colors.blue),
+            style: const TextStyle(color: Colors.blue),
           ),
         )
       ],
@@ -123,10 +122,10 @@ class _SpeakPageState extends State<SpeakPage>
               child: Column(
                 children: <Widget>[
                   Padding(
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     child: Text(
                       speakTips,
-                      style: TextStyle(color: Colors.blue, fontSize: 12),
+                      style: const TextStyle(color: Colors.blue, fontSize: 12),
                     ),
                   ),
                   Stack(
@@ -173,7 +172,7 @@ class AnimatedMic extends AnimatedWidget {
   static final _opacityTween = Tween<double>(begin: 1, end: 0.5);
   static final _sizeTween = Tween<double>(begin: MIC_SIZE, end: MIC_SIZE - 20);
 
-  AnimatedMic(Animation<double> animation, {Key? key})
+  const AnimatedMic(Animation<double> animation, {Key? key})
       : super(key: key, listenable: animation);
 
   @override
@@ -188,7 +187,7 @@ class AnimatedMic extends AnimatedWidget {
           color: Colors.blue,
           borderRadius: BorderRadius.circular(MIC_SIZE / 2),
         ),
-        child: Icon(
+        child: const Icon(
           Icons.mic,
           color: Colors.white,
           size: 30,

@@ -1,6 +1,7 @@
 //import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_splash_screen/flutter_splash_screen.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 import 'package:flutter_trip/dao/home_dao.dart';
 import 'package:flutter_trip/model/common_model.dart';
@@ -40,6 +41,10 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     _handleRefresh();
+    //启动屏
+    Future.delayed(const Duration(milliseconds: 600), () {
+      FlutterSplashScreen.hide();
+    });
   }
 
   @override
@@ -163,7 +168,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Future<Null> _handleRefresh() async {
+  Future<void> _handleRefresh() async {
     HomeDao.fetch().then((value) {
       setState(() {
         localNavList = value.localNavList;
@@ -178,12 +183,12 @@ class _HomePageState extends State<HomePage> {
         _loading = false;
       });
     });
-    return null;
+    return;
   }
 
   void _jumpToSpeak() {
     Navigator.push(context, MaterialPageRoute(builder: (context) {
-      return SpeakPage();
+      return const SpeakPage();
     }));
   }
 

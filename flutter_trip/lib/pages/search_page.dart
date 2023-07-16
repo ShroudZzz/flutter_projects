@@ -107,7 +107,7 @@ class _SearchPageState extends State<SearchPage> {
 
   void _jumpToSpeak() {
     Navigator.push(context, MaterialPageRoute(builder: (context) {
-      return SpeakPage();
+      return const SpeakPage();
     }));
   }
 
@@ -194,7 +194,7 @@ class _SearchPageState extends State<SearchPage> {
 
   _keywordTextSpans(String? word, String keyword) {
     List<TextSpan> spans = [];
-    if (word == null || word.length == 0) return spans;
+    if (word == null || word.isEmpty) return spans;
     //搜索关键字高亮忽略大小写
     String wordL = word.toLowerCase(), keywordL = keyword.toLowerCase();
     List<String> arr = wordL.split(keywordL);
@@ -211,7 +211,7 @@ class _SearchPageState extends State<SearchPage> {
             style: keywordStyle));
       }
       String val = arr[i];
-      if (val.length > 0) {
+      if (val.isNotEmpty) {
         spans.add(TextSpan(text: val, style: normalStyle));
       }
     }

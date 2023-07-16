@@ -5,7 +5,7 @@ import 'package:flutter_trip/navigator/tab_navigator.dart';
 //import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {

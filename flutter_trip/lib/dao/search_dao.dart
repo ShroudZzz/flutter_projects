@@ -9,7 +9,7 @@ class SearchDao {
     var uri = Uri.parse(url);
     final response = await http.get(uri);
     if (response.statusCode == 200) {
-      Utf8Decoder utf8decoder = Utf8Decoder(); // fix 中文乱码
+      Utf8Decoder utf8decoder = const Utf8Decoder(); // fix 中文乱码
       var result = json.decode(utf8decoder.convert(response.bodyBytes));
       //只有当当前输入的内容和服务端返回的内容一致时才渲染
       SearchModel model = SearchModel.fromJson(result);
