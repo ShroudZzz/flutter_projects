@@ -77,41 +77,39 @@ class _SearchBarState extends State<SearchBar> {
   }
 
   _genHomeSearch() {
-    return Container(
-      child: Row(children: <Widget>[
-        _wrapTap(
-            Container(
-                padding: const EdgeInsets.fromLTRB(6, 5, 5, 5),
-                child: Row(
-                  children: <Widget>[
-                    Text(
-                      '上海',
-                      style: TextStyle(color: _homeFontColor(), fontSize: 14),
-                    ),
-                    Icon(
-                      Icons.expand_more,
-                      color: _homeFontColor(),
-                      size: 22,
-                    )
-                  ],
-                )),
-            widget.leftButtonClick ?? () {}),
-        Expanded(
-          flex: 1,
-          child: _inputBox(),
-        ),
-        _wrapTap(
-            Container(
-              padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
-              child: Icon(
-                Icons.comment,
-                color: _homeFontColor(),
-                size: 26,
-              ),
+    return Row(children: <Widget>[
+      _wrapTap(
+          Container(
+              padding: const EdgeInsets.fromLTRB(6, 5, 5, 5),
+              child: Row(
+                children: <Widget>[
+                  Text(
+                    '上海',
+                    style: TextStyle(color: _homeFontColor(), fontSize: 14),
+                  ),
+                  Icon(
+                    Icons.expand_more,
+                    color: _homeFontColor(),
+                    size: 22,
+                  )
+                ],
+              )),
+          widget.leftButtonClick ?? () {}),
+      Expanded(
+        flex: 1,
+        child: _inputBox(),
+      ),
+      _wrapTap(
+          Container(
+            padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
+            child: Icon(
+              Icons.comment,
+              color: _homeFontColor(),
+              size: 26,
             ),
-            widget.rightButtonClick ?? () {})
-      ]),
-    );
+          ),
+          widget.rightButtonClick ?? () {})
+    ]);
   }
 
   _wrapTap(Widget child, void Function() callback) {
@@ -164,11 +162,9 @@ class _SearchBarState extends State<SearchBar> {
                           hintStyle: const TextStyle(fontSize: 15)),
                     )
                   : _wrapTap(
-                      Container(
-                        child: Text(widget.defaultText ?? '',
-                            style: const TextStyle(
-                                fontSize: 13, color: Colors.grey)),
-                      ),
+                      Text(widget.defaultText ?? '',
+                          style: const TextStyle(
+                              fontSize: 13, color: Colors.grey)),
                       widget.inputBoxClick ?? () {})),
           !showClear
               ? _wrapTap(

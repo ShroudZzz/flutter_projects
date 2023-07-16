@@ -10,6 +10,7 @@ import 'package:flutter_trip/model/grid_nav_model.dart';
 import 'package:flutter_trip/model/sales_box_model.dart';
 import 'package:flutter_trip/pages/search_page.dart';
 import 'package:flutter_trip/pages/speak_page.dart';
+import 'package:flutter_trip/util/navigator_util.dart';
 import 'package:flutter_trip/widget/grid_nav.dart' as GridNav;
 import 'package:flutter_trip/widget/local_nav.dart';
 import 'package:flutter_trip/widget/sales_box.dart';
@@ -187,14 +188,10 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _jumpToSpeak() {
-    Navigator.push(context, MaterialPageRoute(builder: (context) {
-      return const SpeakPage();
-    }));
+    NavigatorUtil.push(context, const SpeakPage());
   }
 
   void _jumpToSearch() {
-    Navigator.push(context, MaterialPageRoute(builder: (context) {
-      return const SearchPage(hint: SEARCH_BAR_DEFAULT_TEXT);
-    }));
+    NavigatorUtil.push(context, const SearchPage(hint: SEARCH_BAR_DEFAULT_TEXT));
   }
 }

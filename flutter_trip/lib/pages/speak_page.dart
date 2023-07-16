@@ -7,7 +7,7 @@ class SpeakPage extends StatefulWidget {
   const SpeakPage({super.key});
 
   @override
-  _SpeakPageState createState() => _SpeakPageState();
+  State<SpeakPage> createState() => _SpeakPageState();
 }
 
 class _SpeakPageState extends State<SpeakPage>
@@ -130,7 +130,7 @@ class _SpeakPageState extends State<SpeakPage>
                   ),
                   Stack(
                     children: <Widget>[
-                      Container(
+                      const SizedBox(
                         //占坑，避免动画执行过程中导致父布局大小变得
                         height: MIC_SIZE,
                         width: MIC_SIZE,

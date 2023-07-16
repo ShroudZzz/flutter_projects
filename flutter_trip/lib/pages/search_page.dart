@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_trip/dao/search_dao.dart';
 import 'package:flutter_trip/model/search_model.dart';
 import 'package:flutter_trip/pages/speak_page.dart';
+import 'package:flutter_trip/util/navigator_util.dart';
 import 'package:flutter_trip/widget/search_bar.dart' as CSearchBar;
 
 const TYPES = [
@@ -106,9 +107,7 @@ class _SearchPageState extends State<SearchPage> {
   }
 
   void _jumpToSpeak() {
-    Navigator.push(context, MaterialPageRoute(builder: (context) {
-      return const SpeakPage();
-    }));
+    NavigatorUtil.push(context, const SpeakPage());
   }
 
   void _onTextChange(String value) {
@@ -154,7 +153,7 @@ class _SearchPageState extends State<SearchPage> {
             ),
             Column(
               children: <Widget>[
-                Container(
+                SizedBox(
                   width: 300,
                   child: _title(item),
                 ),

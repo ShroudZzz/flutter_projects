@@ -39,31 +39,20 @@ class _TabNavigatorState extends State<TabNavigator> {
             });
           },
           items: [
-            BottomNavigationBarItem(
-                icon: Icon(Icons.home, color: _defaultColor),
-                activeIcon: Icon(Icons.home, color: _activeColor),
-                label: 'Home',
-                backgroundColor:
-                    _currentIndex != 0 ? _defaultColor : _activeColor),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.search, color: _defaultColor),
-                activeIcon: Icon(Icons.search, color: _activeColor),
-                label: 'Search',
-                backgroundColor:
-                    _currentIndex != 1 ? _defaultColor : _activeColor),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.camera_alt, color: _defaultColor),
-                activeIcon: Icon(Icons.camera_alt, color: _activeColor),
-                label: 'Travel',
-                backgroundColor:
-                    _currentIndex != 2 ? _defaultColor : _activeColor),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.account_circle, color: _defaultColor),
-                activeIcon: Icon(Icons.account_circle, color: _activeColor),
-                label: 'My',
-                backgroundColor:
-                    _currentIndex != 3 ? _defaultColor : _activeColor),
+            _bottomItem('Home', Icons.home, 0),
+            _bottomItem('Search', Icons.search, 1),
+            _bottomItem('Travel', Icons.camera_alt, 2),
+            _bottomItem('My', Icons.account_circle, 3),
           ]),
+    );
+  }
+
+  _bottomItem(String title, IconData icon, int index) {
+    return BottomNavigationBarItem(
+      icon: Icon(icon, color: _defaultColor),
+      activeIcon: Icon(icon, color: _activeColor),
+      label: title,
+      backgroundColor: _currentIndex != index ? _defaultColor : _activeColor
     );
   }
 }

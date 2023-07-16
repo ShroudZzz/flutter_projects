@@ -18,7 +18,7 @@ class TravelTabPage extends StatefulWidget {
   const TravelTabPage({super.key, this.travelUrl, required this.params, required this.groupChannelCode});
 
   @override
-  _TravelTabPageState createState() => _TravelTabPageState();
+  State<TravelTabPage> createState() => _TravelTabPageState();
 }
 
 class _TravelTabPageState extends State<TravelTabPage>
